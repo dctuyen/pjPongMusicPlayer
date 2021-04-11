@@ -9,63 +9,122 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#C2DCDC"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-16dp">
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="67dp" />
+            android:layout_height="50dp" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="165dp"
+            android:layout_height="139dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginRight="120dp"
+            android:background="@drawable/border_edit_text"
+            android:backgroundTint="#FFFFE4"
+            android:contentDescription="@string/ic_brand"
+            android:hapticFeedbackEnabled="false"
             app:srcCompat="@drawable/brand_app" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="45dp" />
+            android:layout_height="84dp" />
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/border_edit_text"
+            android:backgroundTint="#00ACC1">
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/ic_persion"
                 app:srcCompat="@drawable/ic_baseline_person_24" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName2"
-                android:layout_width="337dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:autofillHints=""
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="@string/account"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="20dp" />
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/border_edit_text"
+            android:backgroundTint="#00ACC1">
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="75dp"
-                android:layout_height="match_parent"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/app_name"
                 app:srcCompat="@drawable/ic_baseline_vpn_key_24" />
 
             <EditText
                 android:id="@+id/editTextTextPassword"
-                android:layout_width="336dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:autofillHints=""
                 android:ems="10"
+                android:hint="@string/password"
                 android:inputType="textPassword" />
+        </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="34dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="102dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_non_border"
+                android:shadowColor="#00E10404"
+                android:text="Register"
+                android:textAllCaps="true"
+                android:textColor="#F4511E" />
+
+            <Space
+                android:layout_width="92dp"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_edit_text"
+                android:backgroundTint="#D81B60"
+                android:text="Login" />
         </TableRow>
 
     </LinearLayout>
