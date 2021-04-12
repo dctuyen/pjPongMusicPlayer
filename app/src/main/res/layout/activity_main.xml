@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:layout_marginTop="500dp"
-            android:text="Click any where to continue :3"
+            android:text="@string/note"
             android:textAlignment="center"
             android:textColor="#D81B60"
             android:textSize="18sp"
@@ -29,7 +29,8 @@
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="467dp"
-            app:srcCompat="@drawable/main" />
+            app:srcCompat="@drawable/main"
+            android:contentDescription="TODO" />
 
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

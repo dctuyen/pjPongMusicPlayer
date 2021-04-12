@@ -11,8 +11,8 @@
         android:layout_height="match_parent"
         android:background="#C2DCDC"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-16dp">
 
         <Space
             android:layout_width="match_parent"
@@ -22,8 +22,7 @@
             android:id="@+id/imageView2"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginLeft="135dp"
-            android:layout_marginRight="135dp"
+            android:layout_marginLeft="120dp"
             android:background="@drawable/border_edit_text"
             android:backgroundTint="#FFFFE4"
             android:contentDescription="@string/ic_brand"
@@ -32,7 +31,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="80dp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -43,14 +42,14 @@
             android:backgroundTint="#00ACC1">
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:id="@+id/imageView5"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:contentDescription="@string/ic_persion"
                 app:srcCompat="@drawable/ic_baseline_person_24" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/editTextTextAccount"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -74,13 +73,13 @@
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
                 android:contentDescription="@string/app_name"
                 app:srcCompat="@drawable/ic_baseline_vpn_key_24" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/editTextConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -95,7 +94,7 @@
             android:layout_height="20dp" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegistration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
@@ -118,43 +117,24 @@
             android:layout_marginRight="30dp"
             android:background="@drawable/btn_non_border"
             android:shadowColor="#00E10404"
-            android:text="Register"
+            android:text="@string/register"
             android:textAllCaps="true"
-            android:textColor="#E40255"
+            android:textColor="#3949AB"
             android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="150dp"
-            android:background="@drawable/border_circle"
-            android:backgroundTint="#D81B60"
-            android:paddingTop="17dp"
-            android:text="hoặc"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#FAF1F1"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
+            android:layout_height="30dp" />
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="55dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp">
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="140dp"
+                android:layout_width="145dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_edit_text"
                 android:backgroundTint="#2D88FF"
