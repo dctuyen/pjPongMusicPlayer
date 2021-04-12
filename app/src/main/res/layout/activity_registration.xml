@@ -16,12 +16,12 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="14dp" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_height="94dp"
             android:layout_marginLeft="135dp"
             android:layout_marginRight="135dp"
             android:background="@drawable/border_edit_text"
@@ -32,7 +32,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="102dp" />
+            android:layout_height="10dp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -57,13 +57,13 @@
                 android:layout_marginStart="10dp"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="@string/account"
+                android:hint="@string/h_v_t_n"
                 android:inputType="textPersonName" />
         </TableRow>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -95,7 +95,39 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/border_edit_text"
+            android:backgroundTint="#00ACC1">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/ic_persion"
+                app:srcCompat="@drawable/ic_baseline_person_24"
+                tools:srcCompat="@drawable/ic_baseline_date_range_24" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:hint="@string/ng_y_sinh"
+                android:ems="10"
+                android:inputType="date"
+                android:autofillHints="" />
+
+        </TableRow>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -133,7 +165,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -163,7 +195,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <TableRow
             android:layout_width="match_parent"
@@ -193,7 +225,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="63dp" />
+            android:layout_height="22dp" />
 
         <Button
             android:id="@+id/btnRegistration"

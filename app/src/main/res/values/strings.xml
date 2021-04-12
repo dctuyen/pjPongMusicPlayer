@@ -17,4 +17,8 @@
     <string name="note">Click any where to continue :3</string>
     <string name="phone">Số điện thoại</string>
     <string name="password2">Nhập lại mật khẩu</string>
+    <string name="hoten">Ngày sinh</string>
+    <string name="h_v_t_n">Họ và Tên</string>
+    <string name="ng_y_sinh">Ngày sinh</string>
+
 </resources>
