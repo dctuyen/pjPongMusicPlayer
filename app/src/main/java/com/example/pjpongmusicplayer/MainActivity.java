@@ -2,17 +2,13 @@ package com.example.pjpongmusicplayer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,12 +21,11 @@ public class MainActivity extends AppCompatActivity {
         mAnimation.setDuration(200);
         mAnimation.setRepeatCount(Animation.INFINITE);
         mAnimation.setRepeatMode(Animation.REVERSE); tv.startAnimation(mAnimation);
-
         ImageView mainImage = (ImageView) findViewById(R.id.imageView);
         mainImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent layoutLogin = new Intent(MainActivity.this,login.class);
+                Intent layoutLogin = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(layoutLogin);
             }
         });

@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
 
-public class login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
