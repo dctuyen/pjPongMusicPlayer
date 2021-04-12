@@ -14,9 +14,9 @@
     <string name="register">Đăng ký</string>
     <string name="google">Google</string>
     <string name="facebook">Facebook</string>
-    <string name="note">Click any where to continue :3</string>
+    <string name="note">Click vào nơi bất kỳ để tiếp tục :3</string>
     <string name="phone">Số điện thoại</string>
-    <string name="password2">Nhập lại mật khẩu</string>
+    <string name="password2">Xác nhận mật khẩu</string>
     <string name="hoten">Ngày sinh</string>
     <string name="h_v_t_n">Họ và Tên</string>
     <string name="ng_y_sinh">Ngày sinh</string>

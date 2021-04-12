@@ -16,14 +16,13 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="14dp" />
+            android:layout_height="5dp" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="120dp"
-            android:layout_height="94dp"
-            android:layout_marginLeft="135dp"
-            android:layout_marginRight="135dp"
+            android:layout_height="113dp"
+            android:layout_marginLeft="120dp"
             android:background="@drawable/border_edit_text"
             android:backgroundTint="#FFFFE4"
             android:contentDescription="@string/ic_brand"
@@ -43,12 +42,11 @@
             android:backgroundTint="#00ACC1">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageViewName"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:contentDescription="@string/ic_persion"
-                app:srcCompat="@drawable/ic_baseline_person_24"
-                tools:srcCompat="@drawable/ic_baseline_drive_file_rename_outline_24" />
+                app:srcCompat="@drawable/ic_baseline_drive_file_rename_outline_24" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
@@ -74,12 +72,11 @@
             android:backgroundTint="#00ACC1">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/imageViewPhone"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:contentDescription="@string/app_name"
-                app:srcCompat="@drawable/ic_baseline_vpn_key_24"
-                tools:srcCompat="@drawable/ic_baseline_phone_android_24" />
+                app:srcCompat="@drawable/ic_baseline_phone_android_24" />
 
             <EditText
                 android:id="@+id/editTextPhone"
@@ -106,12 +103,11 @@
             android:backgroundTint="#00ACC1">
 
             <ImageView
-                android:id="@+id/imageView1"
+                android:id="@+id/imageViewDate"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:contentDescription="@string/ic_persion"
-                app:srcCompat="@drawable/ic_baseline_person_24"
-                tools:srcCompat="@drawable/ic_baseline_date_range_24" />
+                app:srcCompat="@drawable/ic_baseline_date_range_24" />
 
             <EditText
                 android:id="@+id/editTextDate"
@@ -231,8 +227,8 @@
             android:id="@+id/btnRegistration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
             android:background="@drawable/border_edit_text"
             android:backgroundTint="#D81B60"
             android:text="@string/register"
