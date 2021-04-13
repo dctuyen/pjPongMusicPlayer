@@ -1,4 +1,4 @@
-package com.example.pjpongmusicplayer;
+package com.example.pjpongmusicplayer.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.pjpongmusicplayer.R;
 
 public class MainActivity extends AppCompatActivity {
 

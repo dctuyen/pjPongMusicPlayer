@@ -1,4 +1,4 @@
-package com.example.pjpongmusicplayer;
+package com.example.pjpongmusicplayer.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
+
+import com.example.pjpongmusicplayer.R;
 
 public class RegistrationActivity extends AppCompatActivity {
 
