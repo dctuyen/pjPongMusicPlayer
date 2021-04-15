@@ -2,6 +2,7 @@ package com.example.pjpongmusicplayer.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,9 +17,18 @@ import android.widget.Toast;
 import com.example.pjpongmusicplayer.Models.CommonMethod;
 import com.example.pjpongmusicplayer.Models.User;
 import com.example.pjpongmusicplayer.R;
-import com.example.pjpongmusicplayer.Services.APISerivce;
+import com.example.pjpongmusicplayer.Services.APIService;
 import com.example.pjpongmusicplayer.Services.DataService;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -27,7 +37,9 @@ public class LoginActivity extends AppCompatActivity {
     EditText edAccount, edPassword;
     Button btRegistration,btLogin;
     String username, password;
-
+    @SuppressLint("SimpleDateFormat")
+    DateFormat df = new SimpleDateFormat("MM-dd");
+    String date = df.format(Calendar.getInstance().getTime());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,23 +57,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent layoutRegistration = new Intent(LoginActivity.this, RegistrationActivity.class);
                 startActivity(layoutRegistration);
-            }
-        });
-        edAccount.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    if(edAccount.getText().toString().equals(""))
-                        Toast.makeText(getApplicationContext(),"Bạn không thể bỏ trống tài khoản",Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        edPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus)
-                    if(edPassword.getText().toString().equals(""))
-                        Toast.makeText(getApplicationContext(),"Bạn không thể bỏ trống mật khẩu",Toast.LENGTH_SHORT).show();
             }
         });
         btLogin.setOnClickListener(new View.OnClickListener() {
@@ -87,33 +82,52 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void LoginRetrofit(String account,String password) {
-        final User login = new User(account,password);
-        DataService dataService = APISerivce.getService();
-        Call<User> call1 = dataService.createUser(login);
-        call1.enqueue(new Callback<User>() {
+        DataService dataService = APIService.getService();
+        Call<ResponseBody> call1 = dataService.checkUser(account,password);
+        call1.enqueue(new Callback<ResponseBody>() {
+
             @Override
-            public void onResponse(Call<User> call, Response <User> response) {
-                User user = response.body();
-                Log.e("keshav", "user 1 --> "+ user);
-                if(user != null) {
-                    Log.e("keshav", "getUserId         --> "+ user.getUserId());
-                    Log.e("keshav", "getName           --> "+ user.getName());
-                    Log.e("keshav", "getPhoneNumber    --> "+ user.getPhoneNumber());
-                    String responseCode = user.getResponseMessage();
-                    Log.e("keshav", "getResponseMessage --> "+ user.getResponseMessage());
-                    if (responseCode != null && responseCode.equals("404")) {
-                        Toast.makeText(LoginActivity.this, "Invalid Login Details \n Please try again", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(LoginActivity.this, "Welcome " + user.getName(), Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<ResponseBody> call, Response <ResponseBody> response) {
+                if(response.isSuccessful()) {
+                    try {
+                        assert response.body() != null;
+                        JSONObject jsonObject= new JSONObject(response.body().string());
+                        if(jsonObject.getString("result").equals("success")){
+                            User user = new User();
+                            user.setName(jsonObject.getString("user_name"));
+                            user.setPhoneNumber(jsonObject.getString("phone"));
+                            user.setBirthday(jsonObject.getString("birthday"));
+                            String hi = jsonObject.getString("user_name");
+
+                            if(hi.equals("Vũ Thái Sơn"))
+                                hi += " bede";
+                            if(user.getBirthday().contains(date))
+                                hi += "\n Chúc bạn sinh nhật vui vẻ k quạo :))";
+                            CommonMethod.showAlert("Xin chào "+hi, LoginActivity.this);
+                            Intent lyMeny = new Intent(LoginActivity.this,MenuActivity.class);
+                            startActivity(lyMeny);
+                        }
+                        else {
+                            CommonMethod.showAlert("Thông tin đăng nhập không đúng!", LoginActivity.this);
+                            edAccount.setText("");
+                            edPassword.setText("");
+
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
 
                 }
+                else
+                    CommonMethod.showAlert("Đăng nhập không thành công!", LoginActivity.this);
 
             }
 
             @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "onFailure called ", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Không thành công \n Vui lòng thử lại sau! ", Toast.LENGTH_SHORT).show();
                 call.cancel();
             }
         });
@@ -128,10 +142,10 @@ public class LoginActivity extends AppCompatActivity {
         Log.e("Keshav", "password -> " + password);
 
         if (edAccount.getText().toString().trim().equals("")) {
-            CommonMethod.showAlert("UserId Cannot be left blank", LoginActivity.this);
+            CommonMethod.showAlert("Không thể bỏ trống tài khoản", LoginActivity.this);
             return false;
         } else if (edPassword.getText().toString().trim().equals("")) {
-            CommonMethod.showAlert("password Cannot be left blank", LoginActivity.this);
+            CommonMethod.showAlert("Không thể bỏ trống mật khẩu", LoginActivity.this);
             return false;
         }
         return true;

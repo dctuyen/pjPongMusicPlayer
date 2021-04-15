@@ -2,7 +2,9 @@ package com.example.pjpongmusicplayer.Models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     @SerializedName("UserId")
     @Expose
     private String UserId;
@@ -30,12 +32,8 @@ public class User {
     private String Favorite;
     @SerializedName("ResponseMessage")
     private String ResponseMessage;
-
-    public User(String account, String password) {
-        this.Account = account;
-        this.Password = password;
-    }
-
+    public User(){}
+//set data
     public void setPhoneNumber(String phone) {
          this.PhoneNumber = phone;
     }
@@ -44,16 +42,15 @@ public class User {
         this.Name =name;
     }
 
+    public void setBirthday(String btd) {
+        this.Birthday =btd;
+    }
     public void setAccount(String acc) {
         this.Account = acc;
     }
 
     public void setPassword(String pw) {
         this.Password =pw;
-    }
-
-    public void setFavorite(String fvr) {
-        this.Favorite = fvr;
     }
 
     public void setResponseMessage(String rpmess) {

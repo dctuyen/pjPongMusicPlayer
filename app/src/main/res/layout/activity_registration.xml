@@ -51,7 +51,7 @@
                 app:srcCompat="@drawable/ic_baseline_drive_file_rename_outline_24" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/edNameRegist"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -82,7 +82,7 @@
                 app:srcCompat="@drawable/ic_baseline_phone_android_24" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/edPhoneRegist"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -114,7 +114,7 @@
                 app:srcCompat="@drawable/ic_baseline_date_range_24" />
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/edBirthday"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -150,7 +150,7 @@
                 app:srcCompat="@drawable/ic_baseline_person_24" />
 
             <EditText
-                android:id="@+id/edAccountLogin"
+                android:id="@+id/edAccountRegist"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -185,7 +185,7 @@
                 app:srcCompat="@drawable/ic_baseline_vpn_key_24" />
 
             <EditText
-                android:id="@+id/edPasswordLogin"
+                android:id="@+id/edPasswordRegist"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -216,7 +216,7 @@
                 app:srcCompat="@drawable/ic_baseline_vpn_key_24" />
 
             <EditText
-                android:id="@+id/editTextConfirmPassword"
+                android:id="@+id/edConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
