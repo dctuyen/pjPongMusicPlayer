@@ -13,10 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.pjpongmusicplayer.Adapter.BannerAdapter;
-import com.example.pjpongmusicplayer.Models.Banner;
+import com.example.pjpongmusicplayer.Model.Banner;
 import com.example.pjpongmusicplayer.R;
-import com.example.pjpongmusicplayer.Services.APIService;
-import com.example.pjpongmusicplayer.Services.DataService;
+import com.example.pjpongmusicplayer.Service.APIService;
+import com.example.pjpongmusicplayer.Service.Dataservice;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ public class Fragment_Banner extends Fragment {
 
     private void GetData() {
 
-        DataService dataservice = APIService.getService();
+        Dataservice dataservice = APIService.getService();
         Call<List<Banner>> callback = dataservice.GetBanner();
         callback.enqueue(new Callback<List<Banner>>() {
             @Override

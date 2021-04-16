@@ -1,4 +1,4 @@
-package com.example.pjpongmusicplayer.Models;
+package com.example.pjpongmusicplayer.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

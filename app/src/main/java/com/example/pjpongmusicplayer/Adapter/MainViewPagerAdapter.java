@@ -15,7 +15,7 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
     private ArrayList<String> arraytitle = new ArrayList<>();
 
     public MainViewPagerAdapter(@NonNull FragmentManager fm) {
-        super(fm, FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
     }
 
 

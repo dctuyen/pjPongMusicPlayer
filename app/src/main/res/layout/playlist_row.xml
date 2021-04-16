@@ -29,19 +29,19 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:scaleType="fitXY"/>
+
     <TextView
-        android:text="test test test test"
-        android:textSize="13sp"
-        android:layout_alignBottom="@+id/imageviewplaylist"
-        android:layout_toRightOf="@+id/imageviewplaylist"
-        android:layout_marginLeft="13sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
         android:id="@+id/textviewplaylistname"
-        android:maxLines="1"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="50dp"
-        android:ellipsize="end"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageviewplaylist"
+        android:layout_marginLeft="13sp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toRightOf="@+id/imageviewplaylist"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold" />
 </RelativeLayout>

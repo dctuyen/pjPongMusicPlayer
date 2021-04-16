@@ -14,11 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.pjpongmusicplayer.Models.CommonMethod;
-import com.example.pjpongmusicplayer.Models.User;
+import com.example.pjpongmusicplayer.Model.CommonMethod;
+import com.example.pjpongmusicplayer.Model.User;
 import com.example.pjpongmusicplayer.R;
-import com.example.pjpongmusicplayer.Services.APIService;
-import com.example.pjpongmusicplayer.Services.DataService;
+import com.example.pjpongmusicplayer.Service.APIService;
+import com.example.pjpongmusicplayer.Service.Dataservice;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void LoginRetrofit(String account,String password) {
-        DataService dataService = APIService.getService();
+        Dataservice dataService = APIService.getService();
         Call<ResponseBody> call1 = dataService.checkUser(account,password);
         call1.enqueue(new Callback<ResponseBody>() {
 
@@ -97,15 +97,15 @@ public class LoginActivity extends AppCompatActivity {
                             user.setName(jsonObject.getString("user_name"));
                             user.setPhoneNumber(jsonObject.getString("phone"));
                             user.setBirthday(jsonObject.getString("birthday"));
-                            String hi = jsonObject.getString("user_name");
-
-                            if(hi.equals("Vũ Thái Sơn"))
-                                hi += " bede";
-                            if(user.getBirthday().contains(date))
-                                hi += "\n Chúc bạn sinh nhật vui vẻ k quạo :))";
-                            CommonMethod.showAlert("Xin chào "+hi, LoginActivity.this);
-                            Intent lyMeny = new Intent(LoginActivity.this,MenuActivity.class);
-                            startActivity(lyMeny);
+                            user.setAccount(account);
+                            Intent lyMenu = new Intent(LoginActivity.this,MenuActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("user_name",user.getName());
+                            bundle.putString("user_phone",user.getPhoneNumber());
+                            bundle.putString("birthday",user.getBirthday());
+                            bundle.putString("account",user.getAccount());
+                            lyMenu.putExtras(bundle);
+                            startActivity(lyMenu);
                         }
                         else {
                             CommonMethod.showAlert("Thông tin đăng nhập không đúng!", LoginActivity.this);

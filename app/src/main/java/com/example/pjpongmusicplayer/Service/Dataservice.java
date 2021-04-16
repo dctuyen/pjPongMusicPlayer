@@ -1,18 +1,18 @@
-package com.example.pjpongmusicplayer.Services;import com.example.pjpongmusicplayer.Models.User;
+package com.example.pjpongmusicplayer.Service;
+
+import com.example.pjpongmusicplayer.Model.CateagoryTheme;
+import com.example.pjpongmusicplayer.Model.Song;
 
 import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
-import retrofit2.http.Query;
-
-public interface DataService {
+public interface Dataservice {
         @POST("getaccount.php/")
         @FormUrlEncoded
         Call<ResponseBody> checkUser(   @Field("account") String account,
@@ -27,15 +27,17 @@ public interface DataService {
                                       @Field("password") String password);
 
         @GET("songbanner.php")
-        Call<List<com.example.pjpongmusicplayer.Models.Banner>> GetBanner();
+        Call<List<com.example.pjpongmusicplayer.Model.Banner>> GetBanner();
 
         @GET("playlist.php")
-        Call<List<com.example.pjpongmusicplayer.Models.Playlist>> GetPlaylist();
+        Call<List<com.example.pjpongmusicplayer.Model.Playlist>> GetPlaylist();
 
         @GET("themeandcategory.php")
-        Call<List<com.example.pjpongmusicplayer.Models.Categoryytheme>> GetCategoryTheme();
+        Call<CateagoryTheme> GetCategoryTheme();
 
         @GET("albumhot.php")
-        Call<List<com.example.pjpongmusicplayer.Models.Album>> GetAlbumHot();
+        Call<List<com.example.pjpongmusicplayer.Model.Album>> GetAlbumHot();
+        @GET("songlikeslist.php")
+        Call<List<Song>> GetHotSong();
 
 }

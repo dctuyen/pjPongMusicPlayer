@@ -1,4 +1,4 @@
-package com.example.pjpongmusicplayer.Models;
+package com.example.pjpongmusicplayer.Model;
 
 import android.app.Activity;
 import android.app.AlertDialog;

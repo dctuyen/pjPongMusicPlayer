@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.pjpongmusicplayer.Models.Playlist;
+import com.example.pjpongmusicplayer.Model.Playlist;
 import com.example.pjpongmusicplayer.R;
 import com.squareup.picasso.Picasso;
 

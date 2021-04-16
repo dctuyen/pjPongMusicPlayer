@@ -6,15 +6,14 @@
     android:gravity="center">
 
     <TextView
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:gravity="center"
+        android:id="@+id/textviewtitleplaylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:id="@+id/textviewtitleplaylist"
-        android:text="TEST TEST TEST TEST"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
 
     <ListView
         android:layout_below="@+id/textviewtitleplaylist"
@@ -25,20 +24,20 @@
     </ListView>
 
     <TextView
-        android:text="XEM THÊM "
-        android:textSize="19sp"
-        android:drawablePadding="10dp"
-        android:drawableLeft="@drawable/iconmoreplaylist"
-        android:paddingLeft="5dp"
-        android:layout_below="@id/listviewplaylist"
         android:id="@+id/textviewmoreplaylist"
-        android:background="#9c7c7c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listviewplaylist"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#FFFFFF"
+        android:drawableLeft="@drawable/iconmoreplaylist"
+        android:drawablePadding="10dp"
+        android:paddingLeft="5dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:layout_marginBottom="8dp"
+        android:text="xem thêm"
         android:textColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="19sp" />
 
 </RelativeLayout>

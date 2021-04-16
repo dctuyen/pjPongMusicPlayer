@@ -1,4 +1,4 @@
-package com.example.pjpongmusicplayer.Services;
+package com.example.pjpongmusicplayer.Service;
 
 
 import com.google.gson.Gson;

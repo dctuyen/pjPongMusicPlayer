@@ -1,10 +1,10 @@
-package com.example.pjpongmusicplayer.Models;
+package com.example.pjpongmusicplayer.Model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Baihat {
+public class Song {
 
     @SerializedName("song_id")
     @Expose
@@ -18,6 +18,9 @@ public class Baihat {
     @SerializedName("song_artist")
     @Expose
     private String songArtist;
+    @SerializedName("song_link")
+    @Expose
+    private String songLink;
     @SerializedName("song_likes")
     @Expose
     private String songLikes;
@@ -52,6 +55,14 @@ public class Baihat {
 
     public void setSongArtist(String songArtist) {
     this.songArtist = songArtist;
+    }
+
+    public String getSongLink() {
+    return songLink;
+    }
+
+    public void setSongLink(String songLink) {
+    this.songLink = songLink;
     }
 
     public String getSongLikes() {

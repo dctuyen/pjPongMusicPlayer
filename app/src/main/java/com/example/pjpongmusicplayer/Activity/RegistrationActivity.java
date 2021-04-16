@@ -12,10 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.pjpongmusicplayer.Models.CommonMethod;
+import com.example.pjpongmusicplayer.Model.CommonMethod;
 import com.example.pjpongmusicplayer.R;
-import com.example.pjpongmusicplayer.Services.APIService;
-import com.example.pjpongmusicplayer.Services.DataService;
+import com.example.pjpongmusicplayer.Service.APIService;
+import com.example.pjpongmusicplayer.Service.Dataservice;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -96,7 +96,7 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void CreateRetrofit(String name,  String birthday, String phone, String account,String password) {
-        DataService dataService = APIService.getService();
+        Dataservice dataService = APIService.getService();
         Call<ResponseBody> call1 = dataService.createUser(name,birthday,phone,account,password);
         call1.enqueue(new Callback<ResponseBody>() {
             @Override
